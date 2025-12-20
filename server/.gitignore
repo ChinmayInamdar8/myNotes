@@ -3,3 +3,6 @@ package-lock.json
 npm-shrinkwrap.json
 *.log
 *.gz
+generated/prisma
+.env
+dist
