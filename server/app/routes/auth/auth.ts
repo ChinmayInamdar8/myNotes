@@ -40,7 +40,7 @@ router.post('/login', async(req:Request, res:Response)=>{
     }
 
     if(await checkIfPasswordCorrect({dbPassword:user.password, userPassword:password})){
-        return res.status(200).json({status:200, message:Constant.messages.user_logged_in, email});
+        return res.status(200).json({status:200, message:Constant.messages.user_logged_in, email, id:user.id});
     }else{
         return res.status(401).json({status:401, message:Constant.messages.password_incorrect});
     }
