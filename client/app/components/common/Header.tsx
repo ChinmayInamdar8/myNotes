@@ -9,7 +9,7 @@ export default function Header(){
                     <nav><a href="/" className="hover:text-black">Features</a></nav>
                     <nav><a href="/" className="hover:text-black">Pricing</a></nav>
                     <nav><a href="/" className="hover:text-black">Testimonials</a></nav>
-                    <nav><a href="/" className="hover:text-black">Login</a></nav>
+                    <nav><a href="/pages/login" className="hover:text-black">Login</a></nav>
                     <nav><a href="/" className="hover:bg-sky-700 bg-sky-600 text-slate-100 text-shadow-2xs py-2 px-2 rounded font-medium shadow-xl">Get Started</a></nav>
                 </div>
             </header>
