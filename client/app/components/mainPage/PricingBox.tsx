@@ -10,7 +10,7 @@ export default function PricingBox({pricingValue}:{pricingValue:PricingBox}){
             <h3 className="text-xl font-medium">{pricingValue.title}</h3>
             <p className="text-2xl font-semibold">{pricingValue.amount}</p>
             <div className="flex flex-col justify-center items-center gap-2">
-                {pricingValue.features.map((feature)=>(<p>{feature}</p>))}
+                {pricingValue.features.map((feature)=>(<p key={feature}>{feature}</p>))}
             </div>
             <button className={`py-1 px-3 rounded-lg shadow border ${pricingValue.isDefault ? "border-sky-600 bg-sky-600 text-white":"border-slate-300"} hover:shadow-xl cursor-pointer`}>BUY NOW</button>
         </div>
