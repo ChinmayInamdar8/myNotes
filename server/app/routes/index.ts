@@ -13,6 +13,6 @@ app.get('/health', (req:Request, res:Response)=>{
 // routes with router
 app.use('/auth', authRouter);
 
-app.listen(3000, ()=>{
-    console.log("The sever is running on http://localhost:3000");
+app.listen(3001, ()=>{
+    console.log("The sever is running on http://localhost:3001");
 })

@@ -1,5 +1,7 @@
 import CredentialsProvider from "next-auth/providers/credentials";
 import { NextAuthOptions } from "next-auth";
+import axios from "axios";
+import Api from "../constants/api";
 
 interface LoginResponse {
     id:string;
@@ -11,12 +13,14 @@ interface LoginResponse {
 const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
+      id:"credentials",
       name: "credentials",
       credentials: {
         email: { label: "email", type: "text" },
         password: { label: "password", type: "password" },
       },
       async authorize(credentials, req) {
+        console.log("THECREDENTIALSFROMOPTIONS", credentials);
         try {
           const response = await axios.post<LoginResponse>(Api.login, {
             email: credentials?.email,
@@ -59,7 +63,8 @@ const authOptions: NextAuthOptions = {
     maxAge:60*60 // 1 minute
   },
   pages:{
-    signIn:'/pages/login'
+    signIn:'/pages/login',
+    error:'/pages/login'
   },
   secret:process.env.AUTH_SECRET || ""
 };

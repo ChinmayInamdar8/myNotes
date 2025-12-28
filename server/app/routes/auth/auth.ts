@@ -29,6 +29,8 @@ router.post('/signup', async(req:Request, res:Response)=>{
 router.post('/login', async(req:Request, res:Response)=>{
     const {email, password} = req.body;
 
+    console.log("THE epdpoint is coming here");
+
     if(!email || !password){
         return res.status(400).json({status:400, message:Constant.general.data_not_present})
     }
