@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import FullPageLoader from "@/app/components/loader/FullPageLoader";
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 export default function Login() {
   const [loading, setLoading] = useState(false);
@@ -24,7 +25,9 @@ export default function Login() {
         }, );
         console.log(res);
         if(res?.status===200){
-          router.push('/pages/dashboard');
+          Swal.fire("Your account Created successfully!", "", "success").then(()=>{
+            router.push('/pages/dashboard')
+          })
         }
         setLoading(false);
       }
