@@ -2,6 +2,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { NextAuthOptions } from "next-auth";
 import axios from "axios";
 import Api from "../constants/api";
+import Swal from "sweetalert2";
 
 interface LoginResponse {
     id:string;

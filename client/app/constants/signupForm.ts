@@ -10,7 +10,7 @@ const signupFormSchema:SignupFormSchema[] = [
     {
         type:"text",
         name:"name",
-        title:"Email Full Name",
+        title:"Full Name",
         placeholder:"Jon Doe",
         required:true
     },
