@@ -1,4 +1,17 @@
+"use client"
+
+import { useSession } from "next-auth/react"
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+
 export default function Header(){
+    const {data:session, status} = useSession();
+    const router = useRouter();
+    useEffect(()=>{
+        if(status==="authenticated"){
+            router.push('/pages/dashboard');
+        }
+    }, [status])
     return (
         <div className="bg-neutral-50 py-4 shadow sticky top-0">
             <header className="w-full flex flex-col lg:flex-row justify-between">

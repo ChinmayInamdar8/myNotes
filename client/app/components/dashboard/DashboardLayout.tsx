@@ -6,7 +6,7 @@ import SideBar from "./Sidebar";
 export default function DashBoardLayout({children}:{children:React.ReactNode}){
     const {data:session, status} = useSession();
     return (
-        <div className="flex min-h-screen">
+        <div className="flex min-h-screen bg-linear-to-b from-sky-50 via-sky-100 to-sky-50">
                 <SideBar/>
             <main className="flex-1 p-6 max-h-screen overflow-y-auto">
             <p>{session?.user.email}</p>
