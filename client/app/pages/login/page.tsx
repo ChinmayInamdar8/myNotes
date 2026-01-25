@@ -25,14 +25,16 @@ export default function Login() {
         }, );
         console.log(res);
         if(res?.status===200){
-          Swal.fire("Your account Created successfully!", "", "success").then(()=>{
+          Swal.fire("Your are logged in successfully!", "", "success").then(()=>{
             router.push('/pages/dashboard')
           })
+        }else{
+          Swal.fire("Invalid Credentials", "", "error");
         }
         setLoading(false);
       }
     } catch (error) {
-      console.log("The error is ", error);
+      console.log("The error is ", error)
       setLoading(false);
     }
   };
